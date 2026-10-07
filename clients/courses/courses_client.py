@@ -3,7 +3,7 @@ from httpx import Response
 from typing import TypedDict
 
 
-class GeetCoursesQueryDict(TypedDict):
+class GetCoursesQueryDict(TypedDict):
     """
     Описание структуры запроса на получение списка курсов.
     """
@@ -35,7 +35,7 @@ class CoursesClient(APIClient):
     """
     Клиент для работы с /api/v1/courses
     """
-    def get_courses_api(self, query) -> Response:
+    def get_courses_api(self, query: GetCoursesQueryDict) -> Response:
         """
         Метод для получения списка курсов
         :param query: Словарь с userId
